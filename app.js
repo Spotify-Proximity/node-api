@@ -7,7 +7,9 @@ const app = express();
 const PORT = 3003; 
 const uri = process.env.MONGODB_CONNECTION_STRING;
 const connection = mongoose.connection;
+const cors = require('cors');
 
+app.use(cors());
 app.use(express.json());
 
 mongoose.connect(uri, {
